@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./Product.scss";
+import BtnAddToCart from "./BtnAddToCart";
 
 class Product extends Component {
     render() {
@@ -11,9 +12,10 @@ class Product extends Component {
             <article className="product">
                 <h2>{product.name}</h2>
                 <img src={product.image} alt=""/>
+                <div>Prix : {product.price} €</div>
                 <div>{stock}</div>
                 <div>Stock restant: {product.stock - product.qte}</div>
-                <button onClick = {event=>this.props.addToCart(product)} disabled = {stock===0} > Ajouter au panier </button>
+                <BtnAddToCart addToCart={p=>this.props.addToCart(p)} product={product}> Ajouter au panier </BtnAddToCart>
             </article>
         );
     }

@@ -4,7 +4,7 @@ import "./Cart.scss";
 
 class Cart extends Component {
     render() {
-        const productLi = this.props.products.map((product, key) => <li key={key}><CartItem product={product} removeFromCart={p => this.props.removeFromCart(p)}/></li>);
+        const productLi = this.props.products.map((product, key) => <li key={key}><CartItem product={product} removeFromCart={p => this.props.removeFromCart(p)} addToCart={p=>this.props.addToCart(p)}/></li>);
 
         //calcule du montant total
         /*    let total = 0;

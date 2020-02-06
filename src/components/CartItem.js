@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./CartItem.scss";
 import Product from "./Product";
+import BtnAddToCart from "./BtnAddToCart";
 
 class CartItem extends Component {
     render() {
@@ -13,12 +14,14 @@ class CartItem extends Component {
                 <img src={product.image} alt={product.name}/>
                 <div className="cart-item-content">
                     <h3>{product.name}</h3>
-                    <div>Prix : {product.price} €</div>
-                    <div>Prix : {product.qte}
+                    <div>Prix : {product.price}€</div>
+                    <div>
+                        Qte :
                         <button onClick={event => this.props.removeFromCart(product)}> - </button>
+                        {product.qte}
+                        <BtnAddToCart addToCart={p => this.props.addToCart(p)} product={product}> + </BtnAddToCart>
                     </div>
-
-                    <div> Montant total : {product.price * product.qte} €</div>
+                    <div>Total : {product.price * product.qte}€</div>
                 </div>
             </article>
 

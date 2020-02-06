@@ -52,10 +52,14 @@ class App extends Component {
     render() {
         return (
            <main className={"main-container"} >
-                <ProductList products={this.state.products} addToCart={p=>this.addToCart(p)}/>
+                <ProductList
+                    products={this.state.products}
+                    addToCart={p=>this.addToCart(p)}/>
                 <Cart
                     products={this.state.products.filter(product=>product.qte > 0)}
                     removeFromCart={p=>this.removeFromCart(p)}
+
+                    addToCart={p=>this.addToCart(p)}
                 />
            </main>
         );
