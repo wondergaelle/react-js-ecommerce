@@ -1,0 +1,17 @@
+.cart-item {
+  display: flex;
+  margin-bottom: 1em;
+}
+.cart-item img {
+  height: 75px;
+  object-fit: cover;
+  width: 75px;
+}
+.cart-item .cart-item-content {
+  padding: 0 0.5rem;
+}
+.cart-item .cart-item-content h3 {
+  margin: 0;
+}
+
+/*# sourceMappingURL=CartItem.css.map */

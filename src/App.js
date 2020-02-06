@@ -40,14 +40,23 @@ class App extends Component {
     addToCart(product){
         let products =[...this.state.products]; // créer une copie du tableau  pour pouvoir le modifier
         products[this.state.products.indexOf(product)].qte++; // indexOf => index d'un des elts du tableau
-        this.setState({products: products});// mettre a jour et recupérer
+        this.setState({products: products});// mettre à jour et recupérer
+    }
+
+    removeFromCart(product){
+        let products =[...this.state.products]; // créer une copie du tableau  pour pouvoir le modifier
+        products[this.state.products.indexOf(product)].qte--; // indexOf => index d'un des elts du tableau
+        this.setState({products: products});// mettre à jour et recupérer
     }
 
     render() {
         return (
            <main className={"main-container"} >
                 <ProductList products={this.state.products} addToCart={p=>this.addToCart(p)}/>
-                <Cart products={this.state.products.filter(product=>product.qte > 0)}/>
+                <Cart
+                    products={this.state.products.filter(product=>product.qte > 0)}
+                    removeFromCart={p=>this.removeFromCart(p)}
+                />
            </main>
         );
     }

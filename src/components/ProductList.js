@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Product from "./Product";
+import "./ProductList.scss";
 
 class ProductList extends Component {
     render() {
@@ -7,7 +8,7 @@ class ProductList extends Component {
         const products = this.props.products.map((product, key) => <li key={key}><Product product={product} addToCart={p=>this.props.addToCart(p)}/></li>);
 
         return (
-            <ul>
+            <ul className="product-list">
                 {products}
             </ul>
         );

@@ -1,0 +1,11 @@
+.cart {
+  padding: 1em;
+}
+.cart > ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+/*# sourceMappingURL=Cart.css.map */
